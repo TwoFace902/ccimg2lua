@@ -9,7 +9,7 @@ dim = [79,38]
 
 def getClosestColor(rgb):
     lowestDiff = 765
-    retClr = "Ur mom"
+    retClr = None
     cnt = 0
     for clr in crgb:
         #cdiff = math.sqrt(((rgb[0]-clr[0])*0.3)**2 + ((rgb[1]-clr[1])*0.59)**2 + ((rgb[2]-clr[2])*0.11)**2)

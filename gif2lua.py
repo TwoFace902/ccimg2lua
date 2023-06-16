@@ -6,8 +6,8 @@ import math
 crgb = [[240, 240, 240],[242, 178, 51],[229, 127, 216],[153, 178, 242],[222, 222, 108],[127, 204, 25],[242, 178, 204],[76, 76, 76],[153, 153, 153],[76, 153, 178],[178, 102, 229],[51, 102, 204],[127, 102, 76],[87, 166, 78],[204, 76, 76],[17, 17, 17]]
 cname = [1,2,4,8,16,32,64,128,256,512,1024,2048,4096,8192,16384,32768]
 
-h = 67
-w = 79
+h = 52
+w = 100
 
 def getClosestColor(rgb):
     lowestDiff = 765
@@ -22,7 +22,7 @@ def getClosestColor(rgb):
         cnt += 1
     return retClr
 
-gimg = Image.open("test.gif")
+gimg = Image.open("endgoal.gif")
 
 f = open('luacode.txt','w',encoding=None)
 f.write('function s(m,clr,numspace)\n')
