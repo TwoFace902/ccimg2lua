@@ -20,15 +20,15 @@ def getClosestColor(rgb):
         cnt += 1
     return retClr
 
-img = cv2.imread("dark.png")
+img = cv2.imread("test2.jpg")
 h,w = img.shape[:2]
 
 f = open('luacode.txt','w',encoding=None)
 f.write('function s(m,clr,numspace)\n')
-f.write('    m.setBackgroundColor(clr)\n')
+f.write('    m.setBackgroundColor(clr);')
 f.write('m.write(string.rep(\' \',numspace))\n')
 f.write('BACKSPACE!\n')
-f.write('end\n\n')
+f.write('end;')
 f.write('m = peripheral.find(\'monitor\');')
 f.write('m.setTextScale(0.5)\n')
 curSize = 0
