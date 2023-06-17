@@ -29,16 +29,12 @@ f = open('luacode.txt','w',encoding=None)
 f.write('function s(m,clr,numspace)\n')
 f.write('    m.setBackgroundColor(clr);')
 f.write('m.write(string.rep(\' \',numspace))\n')
-f.write('BACKSPACE!\n')
 f.write('end;')
 f.write('m = peripheral.find(\'monitor\');')
 f.write('m.setTextScale(0.5)\n')
 curSize = 0
 for i in range(h):
     sLine = 'm.setCursorPos(1,' + str(i+1) + ');'
-    if (curSize + len(sLine) > 500):
-        f.write("\n")
-        curSize = 0
     curSize += len(sLine)
     f.write(sLine)
     sneedFlag = False
@@ -55,17 +51,11 @@ for i in range(h):
             numSpaces += 1
         else:
             line = 's(m,' + str(prevColor) + ',' + str(numSpaces) + ');'
-            if (curSize + len(line) > 500):
-                f.write("\n")
-                curSize = 0
             f.write(line)
             curSize += len(line)
             numSpaces = 1
         prevColor = curColor
     if numSpaces != 0:
         line = 's(m,' + str(prevColor) + ',' + str(numSpaces) + ');'
-        if (curSize + len(line) > 500):
-                f.write("\n")
-                curSize = 0
         curSize += len(line)
         f.write(line)
